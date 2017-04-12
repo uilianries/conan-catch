@@ -1,0 +1,46 @@
+.gcc-template: &gcc-definition
+  variables:
+      CONAN_USERNAME: "uilianries"
+      CONAN_REFERENCE: "Catch/1.9.1"
+      CONAN_CHANNEL: "ci"
+      CONAN_UPLOAD: 1
+      CONAN_STABLE_BRANCH_PATTERN: "release/*"
+  before_script:
+    - ./.travis/install.sh
+  script:
+    - ./.travis/run.sh 
+
+gcc-4.1:
+  image: uilianries/conangcc41
+  <<: *gcc-definition
+
+gcc-4.6:
+  image: lasote/conangcc46
+  <<: *gcc-definition
+
+gcc-4.8:
+  image: lasote/conangcc48
+  <<: *gcc-definition
+
+gcc-4.9:
+  image: lasote/conangcc49
+  <<: *gcc-definition
+
+gcc-5.2:
+  image: lasote/conangcc52
+  <<: *gcc-definition
+
+gcc-5.3:
+  image: lasote/conangcc53
+  <<: *gcc-definition
+
+gcc-5.4:
+  image: lasote/conangcc54
+  <<: *gcc-definition
+
+gcc-6.2:
+  image: lasote/conangcc62
+  <<: *gcc-definition
+
+gcc-6.3:
+  image: lasote/conangcc63
