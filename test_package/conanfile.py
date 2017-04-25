@@ -1,4 +1,4 @@
-"""Recipe validation for Catch-1.9.1
+"""Recipe validation for Catch-1.9.2
 """
 from os import environ
 from os import getenv
@@ -10,7 +10,7 @@ class TestCatchConan(ConanFile):
     """
     target = "Catch"
     name = "%s-test" % target
-    version = "1.9.1"
+    version = "1.9.2"
     author = "Uilian Ries <uilianries@gmail.com>"
     license = "Boost"
     settings = "os", "compiler", "build_type", "arch"
