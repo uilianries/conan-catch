@@ -6,7 +6,7 @@ language: python
 env:
   global:
     - CONAN_UPLOAD=1
-    - CONAN_REFERENCE="Catch/1.9.2"
+    - CONAN_REFERENCE="Catch/1.9.3"
     - CONAN_USERNAME="uilianries"
     - CONAN_CHANNEL="ci"
     - CONAN_TOTAL_PAGES=1
