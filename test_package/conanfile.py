@@ -27,5 +27,4 @@ class TestCatchConan(ConanFile):
     def test(self):
         cmake = CMake(self)
         cmake.configure(build_dir="./")
-        test_target = "RUN_TESTS" if self.settings.os == "Windows" else "test"
-        cmake.build(target=test_target)
+        cmake.test()
