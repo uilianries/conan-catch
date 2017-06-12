@@ -20,12 +20,11 @@ class TestCatchConan(ConanFile):
     generators = "cmake"
 
     def build(self):
-        cmake = CMake(self.settings)
-        cmake.configure(self, source_dir=self.conanfile_directory, build_dir="./")
-        cmake.build(self)
+        cmake = CMake(self)
+        cmake.configure(build_dir="./")
+        cmake.build()
 
     def test(self):
-        cmake = CMake(self.settings)
-        cmake.configure(self, source_dir=self.conanfile_directory, build_dir="./")
-        test_target = "RUN_TESTS" if self.settings.os == "Windows" else "test"
-        cmake.build(self, target=test_target)
+        cmake = CMake(self)
+        cmake.configure(build_dir="./")
+        cmake.test()
