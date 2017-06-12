@@ -11,7 +11,6 @@ class CatchConan(ConanFile):
     name = "Catch"
     version = "1.9.3"
     generators = "cmake"
-    settings = "os", "arch", "compiler", "build_type"
     url = "https://github.com/uilianries/conan-catch"
     author = "Uilian Ries <uilianries@gmail.com>"
     license = "Boost"
