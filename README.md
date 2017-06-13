@@ -4,7 +4,8 @@
 
 [Conan.io](https://conan.io) package for [Catch](https://github.com/philsquared/Catch) project
 
-The packages generated with this **conanfile** can be found in [conan.io](https://conan.io/source/Catch/1.9.4/uilianries/stable).
+The packages generated with this **conanfile** can be found in [conan.io](https://bintray.com/uilianries/conan/Catch%3Auilianries/1.9.4%3Astable).
+
 
 ## Build packages
 
@@ -13,31 +14,37 @@ Download conan client from [Conan.io](https://conan.io) and run:
     $ python build.py
 
 If your are in Windows you should run it from a VisualStudio console in order to get "mc.exe" in path.
-    
+
+## Add remote
+
+Add Conan remote from bintray account
+
+    $ conan remote add bintray https://api.bintray.com/conan/uilianries/conan
+
 ## Upload packages to server
 
-    $ conan upload Catch/1.9.4@uilianries/stable --all
-    
+    $ conan upload -r bintray Catch/1.9.4@uilianries/stable --all
+
 ## Reuse the packages
 
 ### Basic setup
 
-    $ conan install Catch/1.9.4@uilianries/stable
-    
+    $ conan install -r bintray Catch/1.9.4@uilianries/stable
+
 ### Project setup
 
 If you handle multiple dependencies in your project is better to add a *conanfile.txt*
-    
+
     [requires]
     Catch/1.9.4@uilianries/stable
-    
+
     [generators]
     txt
     cmake
 
 Complete the installation of requirements for your project running:</small></span>
 
-    conan install . 
+    conan install .
 
 Project setup installs the library (and all his dependencies) and generates the files *conanbuildinfo.txt* and *conanbuildinfo.cmake* with all the paths and variables that you need to link with your dependencies.
 
