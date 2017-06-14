@@ -4,11 +4,12 @@ environment:
     PYTHON_VERSION: "2.7.8"
     PYTHON_ARCH: "32"
 
-    CONAN_UPLOAD: 1
+    CONAN_UPLOAD: "https://api.bintray.com/conan/uilianries/conan"
     CONAN_REFERENCE: "Catch/1.9.2"
     CONAN_USERNAME: "uilianries"
     CONAN_CHANNEL: "ci"
     CONAN_TOTAL_PAGES: 1
+    CONAN_STABLE_BRANCH_PATTERN: "release/*"
 
     matrix:
         - CONAN_CURRENT_PAGE: 1
@@ -17,6 +18,5 @@ install:
   - set PATH=%PATH%;%PYTHON%/Scripts/
   - pip.exe install conan --upgrade conan conan_package_tools
   - conan user
-  - if defined CONAN_REMOTE_ADDRESS (conan remote add bintray %CONAN_REMOTE_ADDRESS%)
 test_script:
   - python build.py
