@@ -17,5 +17,6 @@ install:
   - set PATH=%PATH%;%PYTHON%/Scripts/
   - pip.exe install conan --upgrade conan conan_package_tools
   - conan user
+  - if defined CONAN_REMOTE_ADDRESS (conan remote add bintray %CONAN_REMOTE_ADDRESS%)
 test_script:
   - python build.py
