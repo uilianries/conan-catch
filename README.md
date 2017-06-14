@@ -4,7 +4,7 @@
 
 [Conan.io](https://conan.io) package for [Catch](https://github.com/philsquared/Catch) project
 
-The packages generated with this **conanfile** can be found in [conan.io](https://bintray.com/uilianries/conan/Catch/1.9.2%3Astable).
+The packages generated with this **conanfile** can be found in [Bintray](https://bintray.com/uilianries/conan/Catch/1.9.2%3Astable).
 
 ## Build packages
 
@@ -22,13 +22,13 @@ Add Conan remote from bintray account
 
 ## Upload packages to server
 
-    $ conan upload Catch/1.9.2@uilianries/stable --all
+    $ conan upload -r bintray Catch/1.9.2@uilianries/stable --all
 
 ## Reuse the packages
 
 ### Basic setup
 
-    $ conan install Catch/1.9.2@uilianries/stable
+    $ conan install -r bintray Catch/1.9.2@uilianries/stable
 
 ### Project setup
 
