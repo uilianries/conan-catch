@@ -22,13 +22,13 @@ Add Conan remote from bintray account
 
 ## Upload packages to server
 
-    $ conan upload Catch/1.9.1@uilianries/stable --all
+    $ conan upload -r bintray Catch/1.9.1@uilianries/stable --all
 
 ## Reuse the packages
 
 ### Basic setup
 
-    $ conan install Catch/1.9.1@uilianries/stable
+    $ conan install -r bintray Catch/1.9.1@uilianries/stable
 
 ### Project setup
 
