@@ -22,3 +22,6 @@ fi
 
 pip install conan_package_tools # It install conan too
 conan user
+if [ -n "${CONAN_REMOTE_ADDRESS}" ]; then
+    conan remote add bintray ${CONAN_REMOTE_ADDRESS}
+fi
