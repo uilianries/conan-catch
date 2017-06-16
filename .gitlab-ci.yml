@@ -1,46 +1,78 @@
-.gcc-template: &gcc-definition
-  variables:
-      CONAN_USERNAME: "uilianries"
-      CONAN_REFERENCE: "Catch/1.9.1"
-      CONAN_CHANNEL: "ci"
-      CONAN_UPLOAD: 1
-      CONAN_STABLE_BRANCH_PATTERN: "release/*"
-  before_script:
-    - ./.travis/install.sh
-  script:
-    - ./.travis/run.sh 
+variables:
+    CONAN_USERNAME: "uilianries"
+    CONAN_REFERENCE: "Catch/1.9.4"
+    CONAN_CHANNEL: "ci"
+    CONAN_UPLOAD: "https://api.bintray.com/conan/uilianries/conan"
+    CONAN_STABLE_BRANCH_PATTERN: "release/*"
 
-gcc-4.1:
-  image: uilianries/conangcc41
-  <<: *gcc-definition
+.build-template: &build-template
+    before_script:
+        - sudo -E ./.travis/install.sh
+    script:
+        - sudo -E ./.travis/run.sh
 
 gcc-4.6:
-  image: lasote/conangcc46
-  <<: *gcc-definition
+    image: lasote/conangcc46
+    variables:
+        CONAN_GCC_VERSIONS: "4.6"
+    <<: *build-template
 
 gcc-4.8:
-  image: lasote/conangcc48
-  <<: *gcc-definition
+    image: lasote/conangcc48
+    variables:
+        CONAN_GCC_VERSIONS: "4.8"
+    <<: *build-template
 
 gcc-4.9:
-  image: lasote/conangcc49
-  <<: *gcc-definition
+    image: lasote/conangcc49
+    variables:
+        CONAN_GCC_VERSIONS: "4.9"
+    <<: *build-template
 
 gcc-5.2:
-  image: lasote/conangcc52
-  <<: *gcc-definition
+    image: lasote/conangcc52
+    variables:
+        CONAN_GCC_VERSIONS: "5.2"
+    <<: *build-template
 
 gcc-5.3:
-  image: lasote/conangcc53
-  <<: *gcc-definition
+    image: lasote/conangcc53
+    variables:
+        CONAN_GCC_VERSIONS: "5.3"
+    <<: *build-template
 
 gcc-5.4:
-  image: lasote/conangcc54
-  <<: *gcc-definition
+    image: lasote/conangcc54
+    variables:
+        CONAN_GCC_VERSIONS: "5.4"
+    <<: *build-template
 
 gcc-6.2:
-  image: lasote/conangcc62
-  <<: *gcc-definition
+    image: lasote/conangcc62
+    variables:
+        CONAN_GCC_VERSIONS: "6.2"
+    <<: *build-template
 
 gcc-6.3:
-  image: lasote/conangcc63
+    image: lasote/conangcc63
+    variables:
+        CONAN_GCC_VERSIONS: "6.3"
+    <<: *build-template
+
+clang-3.8:
+    image: lasote/conanclang38
+    variables:
+        CONAN_CLANG_VERSIONS: "3.8"
+    <<: *build-template
+
+clang-3.9:
+    image: lasote/conanclang39
+    variables:
+        CONAN_CLANG_VERSIONS: "3.9"
+    <<: *build-template
+
+clang-4.0:
+    image: lasote/conanclang40
+    variables:
+        CONAN_CLANG_VERSIONS: "4.0"
+    <<: *build-template
