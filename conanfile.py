@@ -9,7 +9,7 @@ class CatchConan(ConanFile):
     """Download Catch Cpp, build and create package
     """
     name = "Catch"
-    version = "1.9.4"
+    version = "1.9.5"
     generators = "cmake"
     url = "https://github.com/uilianries/conan-catch"
     author = "Uilian Ries <uilianries@gmail.com>"
@@ -19,7 +19,7 @@ class CatchConan(ConanFile):
     def source(self):
         header_name = "catch.hpp"
         download("https://github.com/philsquared/Catch/releases/download/v%s/%s" % (self.version, header_name), header_name)
-        check_md5(header_name, "1af57a3c17849b0767937eecf678f001")
+        check_md5(header_name, "de513bbe3cfff90b186c85273aab13ec")
 
     def package(self):
         self.copy(pattern="catch.hpp", dst="include")

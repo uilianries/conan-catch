@@ -1,6 +1,6 @@
 env:
   global:
-    - CONAN_REFERENCE: "Catch/1.9.4"
+    - CONAN_REFERENCE: "Catch/1.9.5"
     - CONAN_USERNAME: "uilianries"
     - CONAN_CHANNEL: "ci"
     - CONAN_STABLE_BRANCH_PATTERN: "release/*"
