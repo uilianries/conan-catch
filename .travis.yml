@@ -1,10 +1,6 @@
 env:
   global:
     - CONAN_REFERENCE: "Catch/1.9.6"
-    - CONAN_USERNAME: "uilianries"
-    - CONAN_CHANNEL: "ci"
-    - CONAN_STABLE_BRANCH_PATTERN: "release/*"
-    - CONAN_UPLOAD: "https://api.bintray.com/conan/uilianries/conan"
 
 linux-job: &linux-job
     os: linux
