@@ -1,6 +1,6 @@
 variables:
     CONAN_USERNAME: "uilianries"
-    CONAN_REFERENCE: "Catch/1.9.5"
+    CONAN_REFERENCE: "Catch/1.9.6"
     CONAN_CHANNEL: "ci"
     CONAN_UPLOAD: "https://api.bintray.com/conan/uilianries/conan"
     CONAN_STABLE_BRANCH_PATTERN: "release/*"
